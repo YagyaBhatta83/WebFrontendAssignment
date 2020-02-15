@@ -1,0 +1,124 @@
+<p>
+  client-detail works!
+</p>
+
+<!--Collapse on toggle starts-->
+<!-- <section id="collapse">
+  <div class="row text-left">
+    <div class="col-12">
+      <div class="content-header">Collapse</div>
+    </div>
+  </div>
+  <div class="row text-left">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div>
+              <button type="button" class="btn btn-outline-primary mt-2" (click)="isCollapsed = !isCollapsed"
+                      [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                Toggle
+              </button>
+            </div>
+            <div id="collapseExample" [ngbCollapse]="isCollapsed">
+              <br>
+              <p>Jelly-o cake chocolate bar. Ice cream gummi bears candy canes cookie toffee halvah marzipan. Gummies dessert powder biscuit sweet roll. Biscuit muffin jujubes. Tiramisu pie danish muffin oat cake. Apple pie cupcake apple pie cotton candy toffee biscuit pie. Lemon drops dessert marshmallow. Jelly-o soufflé muffin muffin. Tootsie roll carrot cake sugar plum brownie chocolate cake croissant cotton candy lemon drops toffee.</p>
+              <p>Sweet roll cotton candy jelly-o tootsie roll candy canes liquorice tart cotton candy tiramisu. Powder sesame snaps chocolate liquorice pudding jelly cake pie. Lemon drops ice cream chocolate bar pudding dragée. Pastry cake cheesecake chocolate cake. Toffee bonbon fruitcake candy canes biscuit. Jelly chocolate cake danish tart jelly-o candy jelly powder. Brownie gummi bears brownie bear claw brownie bear claw croissant marshmallow. Pudding cake icing gummies pudding candy gingerbread macaroon. Chupa chups pastry tiramisu liquorice tiramisu marshmallow gummies brownie candy canes.</p>
+              <p>Jelly beans halvah brownie macaroon powder. Wafer gingerbread caramels candy tootsie roll powder chupa chups. Marshmallow candy caramels chocolate cake oat cake caramels. Ice cream jelly liquorice danish toffee caramels. Danish icing topping. Carrot cake cupcake marshmallow donut sugar plum gingerbread sweet jelly. Pastry chocolate carrot cake sweet macaroon sweet roll jelly beans topping. Biscuit lollipop jelly-o tart halvah muffin. Caramels topping gummies pastry sweet. Lollipop candy canes bonbon sesame snaps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!--Collapse on toggle ends-->
+
+
+
+
+<section id="striped-row-form-layouts">
+  <div class="row text-left">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title" id="striped-row-layout-card-center">user Detail</h4>
+          <p class="mb-0">Add <code>.striped-rows</code> to form tag to add striped rows. In this example centered card
+            is used to show the striped rows functionality.</p>
+        </div>
+        <div class="card-content">
+          <div class="px-3">
+      <form class="form form-horizontal striped-rows" novalidate>>
+
+              <div class="form-body">
+
+
+
+                  <div class="form-group row">
+                  <label class="col-md-3 label-control" for="eventRegInput3">Full Name</label>
+                  <div class="col-md-9">
+                    {{user.fullName}}
+                  </div>
+                  </div>
+
+
+                  <div class="form-group row">
+                  <label class="col-md-3 label-control" for="eventRegInput3">Username</label>
+                  <div class="col-md-9">
+                    {{user.username}}
+                  </div>
+                  </div>
+
+
+                  <div class="form-group row">
+                  <label class="col-md-3 label-control" for="eventRegInput3">Location</label>
+                  <div class="col-md-9">
+                    {{user.location}}
+                  </div>
+                  </div>
+
+
+                  <div class="form-group row">
+                  <label class="col-md-3 label-control" for="eventRegInput3">Phone Number</label>
+                  <div class="col-md-9">
+                    {{user.phoneNumber}}
+                  </div>
+                  </div>
+
+
+                  <div class="form-group row">
+                  <label class="col-md-3 label-control" for="eventRegInput3">Image</label>
+                  <div class="col-md-9">
+                    {{user.image}}
+                  </div>
+                  </div>
+
+
+                  <div class="form-group row">
+                  <label class="col-md-3 label-control" for="eventRegInput3">Admin</label>
+                  <div class="col-md-9">
+                    {{user.admin}}
+                  </div>
+                  </div>
+
+
+
+
+              </div>
+            </form>
+
+
+              <div class="form-actions center">
+                
+
+                <button type="button" class="btn btn-raised btn-danger" (click)='DeleteUser()'>
+                  <i class="fa fa-check-square-o"></i> Delete this user
+                </button>
+
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

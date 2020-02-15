@@ -1,0 +1,64 @@
+<p>
+  add-newclient works!
+</p>
+
+
+
+
+
+
+<section id="striped-row-form-layouts">
+  <div class="row text-left">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title" id="striped-row-layout-card-center">Add Item</h4>
+          <p class="mb-0">Add <code>.striped-rows</code> to form tag to add striped rows. In this example centered card
+            is used to show the striped rows functionality.</p>
+        </div>
+
+        <div class="card-content">
+          <div class="px-3">
+            <form class="form form-horizontal striped-rows" #newitemForm="ngForm" novalidate>>
+              <div class="form-body">
+
+                <div class="form-group row">
+                  <label class="col-md-3 label-control" for="eventRegInput1">Name</label>
+                  <div class="col-md-4">
+                    <input type="text" id="eventRegInput1" class="form-control" placeholder="Item Name" name="name" [(ngModel)]="newitem.name" #name="ngModel">
+                  </div>
+                </div>
+
+                  <div class="form-group row">
+                  <label class="col-md-3 label-control" for="eventRegInput3">Price</label>
+                  <div class="col-md-9">
+                    <input type="text" id="eventRegInput3" class="form-control" placeholder="Price" name="price" [(ngModel)]="newitem.price" #organization="ngModel">
+                  </div>
+                </div>
+
+
+
+                  <div class="form-group row">
+                  <label class="col-md-3 label-control" for="eventRegInput3">Image</label>
+                  <div class="col-md-9">
+                    <input type="text" id="eventRegInput3" class="form-control" placeholder="Image" name="image" [(ngModel)]="newitem.image" #organization="ngModel">
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="form-actions center">
+                <button type="button" class="btn btn-raised btn-warning mr-1">
+                  <i class="ft-x"></i> Cancel
+                </button>
+                <button type="button" class="btn btn-raised btn-primary" (click)='submit()'>
+                  <i class="fa fa-check-square-o"></i> Add
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

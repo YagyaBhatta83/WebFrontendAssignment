@@ -1,0 +1,84 @@
+<p>
+  clients works!
+</p>
+<!-- Filter Datatable Options Starts -->
+<section id="filter" class="mb-3">
+    <div class="row text-left">
+        <div class="col-12">
+            <div class="content-header">Filter Option</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <input type='text' style='padding:8px;margin:15px auto;width:30%;' placeholder='Type to filter the name column...' (keyup)='updateFilter($event)'
+            />
+            <ngx-datatable #table class='bootstrap' [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+                [rowHeight]="'auto'" [limit]="10" [rows]='rows'>
+                  
+            </ngx-datatable>
+        </div>
+    </div>
+
+    <ngx-datatable [rows]="rows" class="bootstrap">
+        <ngx-datatable-column>
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Full Name
+            </ng-template>
+            
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                <a (click)='userDetail(row._id)'>
+                {{row.fullName}}
+                </a>
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column>
+            <ng-template let-column="column" ngx-datatable-header-template>
+            Username      </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.username}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column>
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Phone
+            </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.phoneNumber}}
+            </ng-template>
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column>
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Location
+            </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.location}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column>
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Image
+            </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.image}}
+            </ng-template>
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column>
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Admin
+            </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.admin}}
+            </ng-template>
+        </ngx-datatable-column>
+
+    </ngx-datatable>
+
+</section>
+<!-- Filter Datatable Options Ends -->

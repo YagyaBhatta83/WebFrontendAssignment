@@ -1,0 +1,1 @@
+Angular Laundry Web app
