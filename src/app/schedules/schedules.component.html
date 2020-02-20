@@ -1,73 +1,71 @@
-<p>
-  clients works!
-</p>
+
 <!-- Filter Datatable Options Starts -->
 <section id="filter" class="mb-3">
     <div class="row text-left">
         <div class="col-12">
-            <div class="content-header">Filter Option</div>
+            <div class="content-header">Orders</div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <input type='text' style='padding:8px;margin:15px auto;width:30%;' placeholder='Type to filter the name column...' (keyup)='updateFilter($event)'
-            />
-            <ngx-datatable #table class='bootstrap' [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-                [rowHeight]="'auto'" [limit]="10" [rows]='rows'>
-                  
-            </ngx-datatable>
+           
+          
+
+<div class="row" matchHeight ="card">
+	<div class="col-xl-8 col-lg-12 col-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">Schedules</h4>
+			</div>
+			<div class="card-content">
+				<table class="table table-responsive-sm text-center">
+					<thead>
+						<tr>
+							<th>S.N</th>
+							<th>Username</th>
+							<th>Status</th>
+                            <th>Date</th>
+                            <th>Time</th>
+
+                            <th>Item</th>
+                            
+							<th>No. of Item</th>
+                            
+							<th>Location</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let schedule of schedules_list;let i =index">
+                               
+
+                            <td>{{i+1}}</td>
+                            <a (click)='scheduleDetail(schedule._id)'>
+                            <td>{{schedule.user.username}}</td>
+                            </a>
+
+                            <td>{{schedule.status}}</td>
+                            
+							<td>{{schedule.date}}</td>
+							<td>{{schedule.time}}</td>
+							<td>{{schedule.item.name}}</td>
+							<td>{{schedule.noofitem}}</td>
+							<td>{{schedule.location}}</td>
+							
+							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
         </div>
     </div>
-
-    <ngx-datatable [rows]="rows" class="bootstrap">
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Status
-            </ng-template>
-            
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                <a (click)='scheduleDetail(row._id)'>
-                {{row.status}}
-                </a>
-            </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-            Date       </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.date}}
-            </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Time
-            </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.time}}
-            </ng-template>
-        </ngx-datatable-column>
-
-
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Location
-            </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.location}}
-            </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                User
-            </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.user}}
-            </ng-template>
-        </ngx-datatable-column>
-    </ngx-datatable>
 
 </section>
 <!-- Filter Datatable Options Ends -->

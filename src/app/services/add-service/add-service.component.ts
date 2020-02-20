@@ -15,7 +15,8 @@ import { Router } from '@angular/router';
 })
 export class AddServiceComponent implements OnInit {
 
-	newservice:any;
+  newservice:any;
+  files =[];
 
   constructor(public servicesservice:ServicesService,  public router: Router ) { 
   	this.newservice = {};
@@ -27,10 +28,8 @@ export class AddServiceComponent implements OnInit {
   submit(){
     console.log("Submitted>>>>>>>>>",this.newservice);
 
-    this.servicesservice.addService(this.newservice).subscribe((data:any)=>{
+    this.servicesservice.addService(this.newservice,this.files).subscribe((data:any)=>{
       console.log("added successfully");
-
-
          swal.fire(
         'Added!',
         'Service Added.',
@@ -38,8 +37,6 @@ export class AddServiceComponent implements OnInit {
       )
 
        this.router.navigate(['/admin/services']);
-
-
     },error => {
 
            swal.fire(
@@ -51,7 +48,10 @@ export class AddServiceComponent implements OnInit {
     })
 
 
+  }
 
+  fileChanged(ev){
+    this.files = ev.target.files;
   }
 
 }

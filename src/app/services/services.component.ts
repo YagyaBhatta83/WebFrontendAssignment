@@ -16,8 +16,7 @@ import { Router} from "@angular/router";
 export class ServicesComponent implements OnInit {
 
 	  services_list:Array<any>;
-  	rows:any = [];
-    temp = [];
+  	files:[];
 
     // Table Column Titles
     columns = [
@@ -37,9 +36,7 @@ export class ServicesComponent implements OnInit {
  				  console.log("Services>>",data);
            this.services_list = data;
 
-   				this.temp = [...this.services_list];
-          // push our inital complete list
-			      this.rows = data;
+   				
 
    			}),error=>{
    				console.log("error>>",error);
@@ -54,19 +51,6 @@ export class ServicesComponent implements OnInit {
 
   }
 
-    updateFilter(event) {
-        const val = event.target.value.toLowerCase();
-
-        // filter our data
-        const temp = this.temp.filter(function (d) {
-            return (d.f_name.toLowerCase().indexOf(val) !== -1 || d.org_name.toLowerCase().indexOf(val) !== -1 || d.email.toLowerCase().indexOf(val) !== -1 || !val);
-        });
-
-        // update the rows
-        this.rows = temp;
-        // Whenever the filter changes, always go back to the first page
-        this.table.offset = 0;
-    }
 
     serviceDetail(id){
       this.router.navigate(['admin/services/detail/'+id]);  

@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 
 export class RegisterPageComponent {
+    user;
     @ViewChild('f', {static: false}) registerForm: NgForm;
 
     //  On submit click, reset field value

@@ -1,0 +1,46 @@
+ORDERS
+
+
+
+
+<div class="row" matchHeight ="card">
+	<div class="col-xl-8 col-lg-12 col-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">Your Orders</h4>
+			</div>
+			<div class="card-content">
+				<table class="table table-responsive-sm text-center">
+					<thead>
+						<tr>
+							<th>S.N</th>
+							<th>Status</th>
+							<th>Date</th>
+							<th>Time</th>
+							<th>Location</th>
+							<th>Service</th>
+							<th>Item</th>
+							<th>No.if items</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let order of myorders;let i =index">
+							<td>{{i+1}}</td>
+							<td>{{order.status}}</td>
+							<td>{{order.date}}</td>
+							<td>{{order.time}}</td>
+							<td>{{order.location}}</td>
+							<td>{{order.service}}</td>
+							<td>{{order.item.name}}</td>
+							<td>{{order.noofitem}}</td>
+							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

@@ -4,15 +4,31 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Apex - Angular Bootstrap Admin Template</title>
+  <title>EasyLaundry</title>
   <base href="/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!--   
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link href="assets/fonts/feather/style.min.css" rel="stylesheet">
   <link href="assets/fonts/simple-line-icons/style.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900|Montserrat:300,400,500,600,700,800,900'
     rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="assets/vendor/pace/themes/black/pace-theme-flash.css"/>
+  <link rel="stylesheet" href="assets/vendor/pace/themes/black/pace-theme-flash.css"/> -->
+
+
+
+  <!-- Bootstrap Core CSS -->
+	<link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<!-- gallery css -->
+	<link rel="stylesheet" href="assets/css/swipebox.css">
+	<!-- Custom CSS -->
+	<link href="assets/css/style.css" rel='stylesheet' type='text/css' />
+	<!-- font-awesome icons -->
+	<link href="assets/css/fontawesome-all.min.css" rel="stylesheet">
+	<!-- //Custom Theme files -->
+	<!--webfonts-->
+	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	    rel="stylesheet">
   <style type="text/css">
     .pace .pace-activity {
       top: 19px;
@@ -48,8 +64,119 @@
 </head>
 <body>
   <app-root></app-root>
-  <div class="page-loading">
-    <img src="assets/img/oval.svg" class="loading-icon" />
-  </div>
+   <!-- <div class="page-loading">
+    <img src="assets/images/img/oval.svg" class="loading-icon" />
+  </div> -->
+
+
+  <script src="assets/js/jquery-2.2.3.min.js"></script>
+	<!-- js-->
+	<!-- Banner text Responsiveslides -->
+	<script src="assets/js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 4
+			$("#slider3").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+	<!-- //Banner text  Responsiveslides -->
+	<!-- start-smooth-scrolling -->
+	<script src="assets/js/move-top.js "></script>
+	<script src="assets/js/easing.js "></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll ").click(function (event) {
+				event.preventDefault();
+
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smooth-scrolling -->
+	<!-- smooth-scrolling-of-move-up -->
+	<script>
+		$(document).ready(function () {
+			/*
+			 var defaults = {
+				 containerID: 'toTop', // fading element id
+				 containerHoverID: 'toTopHover', // fading element hover id
+				 scrollSpeed: 1200,
+				 easingType: 'linear' 
+			 };
+			 */
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<script src="assets/js/SmoothScroll.min.js "></script>
+	<!-- //smooth-scrolling-of-move-up -->
+	<!-- gallery swipebox -->
+	<script src="assets/js/jquery.swipebox.min.js"></script>
+	<script>
+		jQuery(function ($) {
+			$(".swipebox").swipebox();
+		});
+	</script>
+	<script src="assets/js/jquery.adipoli.min.js"></script>
+	<!-- effect -->
+	<script>
+		$(function () {
+			$('.row2').adipoli({
+				'startEffect': 'overlay',
+				'hoverEffect': 'sliceDown'
+			});
+		});
+	</script>
+	<!-- //swipe box js -->
+	<!-- stats counter -->
+	<script src="assets/js/counter.js"></script>
+	<!-- Date picker -->
+	<link rel="stylesheet" href="assets/css/jquery-ui.css" />
+	<script src="assets/js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker1,#datepicker2").datepicker();
+		});
+	</script>
+	<!-- // Date picker -->
+	<!-- testimonials -->
+	<link href="assets/css/owl.carousel.css" rel="stylesheet">
+	<script src="assets/js/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#owl-demo").owlCarousel({
+				items: 1,
+				lazyLoad: true,
+				autoPlay: false,
+				navigation: true,
+				navigationText: true,
+				pagination: true,
+			});
+		});
+	</script>
+	<!-- //for testimonials slider-js-script-->
+	<!-- Bootstrap Core JavaScript -->
+	<script src="assets/js/bootstrap.js ">
+	</script>
+	<!-- //Bootstrap Core JavaScript -->
 </body>
 </html>

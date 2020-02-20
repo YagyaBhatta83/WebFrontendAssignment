@@ -15,7 +15,8 @@ import { Router } from '@angular/router';
 })
 export class AddItemComponent implements OnInit {
 
-	newitem:any;
+  newitem:any;
+  files:[];
 
   constructor(public itemsservice:ItemsService,  public router: Router ) { 
   	this.newitem = {};
@@ -27,10 +28,8 @@ export class AddItemComponent implements OnInit {
   submit(){
     console.log("Submitted>>>>>>>>>",this.newitem);
 
-    this.itemsservice.addItem(this.newitem).subscribe((data:any)=>{
+    this.itemsservice.addItem(this.newitem,this.files).subscribe((data:any)=>{
       console.log("added successfully");
-
-
          swal.fire(
         'Added!',
         'Item Added.',
@@ -49,9 +48,11 @@ export class AddItemComponent implements OnInit {
       )
       console.log("Error",error);
     })
+  }
 
 
-
+  fileChanged(ev){
+    this.files = ev.target.files;
   }
 
 }

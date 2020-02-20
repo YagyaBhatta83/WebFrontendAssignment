@@ -16,6 +16,7 @@ export class ServiceDetailComponent implements OnInit {
 
 	service:any
   id;
+  files;
 
   constructor( public servicesservice:ServicesService , public activeRouter: ActivatedRoute,
     public router: Router

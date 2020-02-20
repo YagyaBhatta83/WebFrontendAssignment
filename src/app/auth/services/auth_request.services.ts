@@ -1,7 +1,7 @@
 
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { User } from './../../shared/models/user.model';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { BaseService } from './../../shared/services/base.service';
 
 import { environment } from './../../../environments/environment';
@@ -9,19 +9,19 @@ import { environment } from './../../../environments/environment';
 
 
 @Injectable()
-export class AuthRequestService extends BaseService{
+export class AuthRequestService extends BaseService {
     constructor(
-        public http:HttpClient
-    ){
+        public http: HttpClient
+    ) {
         super('');
     }
 
-    login(user:User){
+    login(user: User) {
         console.log('login service');
-        return this.http.post(environment.BaseUrl+'users/login',user,this.getOptions());
+        return this.http.post(environment.BaseUrl + 'users/login', user, this.getOptions());
     }
 
-    register(user:User){
+    register(user: User) {
 
     }
 
@@ -30,12 +30,12 @@ export class AuthRequestService extends BaseService{
     }
 
     resetPassword(user: User) {
-        return this.http.post(environment.BaseUrl + 'reset-password/admin' , user, this.getOptions());
+        return this.http.post(environment.BaseUrl + 'reset-password/admin', user, this.getOptions());
     }
 
 
     changePassword(user: User) {
-        return this.http.put(environment.BaseUrl + 'profile/admin/change-password/' , user, this.getOptionsWithToken());
+        return this.http.put(environment.BaseUrl + 'profile/admin/change-password/', user, this.getOptionsWithToken());
     }
 
 }

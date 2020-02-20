@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+
+<div class="container">
+  <h2>Login</h2>
+
+  <form #loginForm='ngForm' class="form-group" novalidate>
+    <label for="username">Username</label>
+    <input class="form-control" [(ngModel)]='user.username' type="text" placeholder="Username" name="username" required #username='ngModel'>
+    <div *ngIf='username.invalid && username.dirty' class="danger">
+      Required Field**
+    </div>
+    <label for="Password">Password</label>
+    <input class="form-control" [(ngModel)]='user.password' type="password" placeholder="Password" name="Password" #password='ngModel'>
+
+
+
+    <div *ngIf="errors" class="danger">
+      {{errors.error.message}}
+    </div>
+
+    <button [disabled]='loginForm.invalid' (click)="login()" class="btn btn-primary" >LOGIN </button>
+  </form>
+  <p>Dont have an account register here: <a routerLink="/register">Register?</a></p>
+
+
+</div>

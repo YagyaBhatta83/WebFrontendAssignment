@@ -12,17 +12,17 @@ import { AuthGuard } from './auth/auth-guard.service';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'auth/login',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   
-  { path: 'admin', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES,canActivate: [AuthGuard] },
+  { path: 'admin', component: FullLayoutComponent, data: { title: 'full Views' }, canActivate:[AuthGuard] , children: Full_ROUTES },
 
   { path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES},
 
     {
     path: '**',
-    redirectTo: 'pages/error',
+    redirectTo: 'home',
   }
 ];
 

@@ -1,84 +1,73 @@
-<p>
-  clients works!
-</p>
+
 <!-- Filter Datatable Options Starts -->
 <section id="filter" class="mb-3">
     <div class="row text-left">
         <div class="col-12">
-            <div class="content-header">Filter Option</div>
+            <div class="content-header">Users</div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <input type='text' style='padding:8px;margin:15px auto;width:30%;' placeholder='Type to filter the name column...' (keyup)='updateFilter($event)'
-            />
-            <ngx-datatable #table class='bootstrap' [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-                [rowHeight]="'auto'" [limit]="10" [rows]='rows'>
-                  
-            </ngx-datatable>
+           
+          
+
+<div class="row" matchHeight ="card">
+	<div class="col-xl-8 col-lg-12 col-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">Users</h4>
+			</div>
+			<div class="card-content">
+				<table class="table table-responsive-sm text-center">
+					<thead>
+						<tr>
+							<th>S.N</th>
+							<th>Username</th>
+							<th>Fullname</th>
+                            <th>Phone</th>
+                            <th>Location</th>
+
+                            <th>Admin</th>
+                                                    
+							<th>Image</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let user of users_list;let i =index">
+                               
+
+                            <td>{{i+1}}</td>
+                            <a (click)='userDetail(user._id)'>
+                            <td>{{user.username}}</td>
+                            </a>
+                            <td>{{user.fullName}}</td>
+                            <td>{{user.phoneNumber}}</td>
+                            <td>{{user.location}}</td>
+                            <td>{{user.admin}}</td>
+                            <td><img src="http://localhost:3000/{{user.image}}" height="100px"></td>
+
+
+
+
+
+
+                           
+							
+							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
         </div>
     </div>
-
-    <ngx-datatable [rows]="rows" class="bootstrap">
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Full Name
-            </ng-template>
-            
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                <a (click)='userDetail(row._id)'>
-                {{row.fullName}}
-                </a>
-            </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-            Username      </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.username}}
-            </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Phone
-            </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.phoneNumber}}
-            </ng-template>
-        </ngx-datatable-column>
-
-
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Location
-            </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.location}}
-            </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Image
-            </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.image}}
-            </ng-template>
-        </ngx-datatable-column>
-
-
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Admin
-            </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.admin}}
-            </ng-template>
-        </ngx-datatable-column>
-
-    </ngx-datatable>
 
 </section>
 <!-- Filter Datatable Options Ends -->

@@ -24,6 +24,16 @@ export class BaseService{
         }
     }
 
+
+    getOptionsWithClientToken(){
+        return {
+            headers: new HttpHeaders({
+            'content-Type':'application/json',
+            'authorization':'Bearer '+localStorage.getItem('Client_Token')
+            })
+        }
+    }
+
 }
 
 

@@ -1,52 +1,59 @@
-<p>
-  clients works!
-</p>
+
 <!-- Filter Datatable Options Starts -->
 <section id="filter" class="mb-3">
     <div class="row text-left">
         <div class="col-12">
-            <div class="content-header">Filter Option</div>
+            <div class="content-header">Items</div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <input type='text' style='padding:8px;margin:15px auto;width:30%;' placeholder='Type to filter the name column...' (keyup)='updateFilter($event)'
-            />
-            <ngx-datatable #table class='bootstrap' [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-                [rowHeight]="'auto'" [limit]="10" [rows]='rows'>
-                  
-            </ngx-datatable>
+           
+          
+
+<div class="row" matchHeight ="card">
+	<div class="col-xl-8 col-lg-12 col-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">Items</h4>
+			</div>
+			<div class="card-content">
+				<table class="table table-responsive-sm text-center">
+					<thead>
+						<tr>
+							<th>S.N</th>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Image</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let item of items_list;let i =index">
+                               
+
+                            <td>{{i+1}}</td>
+                            <a (click)='itemDetail(item._id)'>
+
+                            <td>{{item.name}}</td>
+                            </a>
+							<td>{{item.price}}</td>
+							<td>                <img src='http://localhost:3000/{{item.image}}'>
+                            </td>
+							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
         </div>
     </div>
-
-    <ngx-datatable [rows]="rows" class="bootstrap">
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Name
-            </ng-template>
-            
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                <a (click)='itemDetail(row._id)'>
-                {{row.name}}
-                </a>
-            </ng-template>
-        </ngx-datatable-column>
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-            Organization       </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.price}}
-            </ng-template>
-        </ngx-datatable-column>
-        <ngx-datatable-column>
-            <ng-template let-column="column" ngx-datatable-header-template>
-                Email
-            </ng-template>
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.image}}
-            </ng-template>
-        </ngx-datatable-column>
-    </ngx-datatable>
 
 </section>
 <!-- Filter Datatable Options Ends -->
